@@ -17,7 +17,12 @@ export class RegisterComponent {
     fullName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    confirmPassword: ['', Validators.required]
+    confirmPassword: ['', Validators.required],
+    gender:['',Validators.required],
+    birthdate: ['', Validators.required],
+    mobile: ['', Validators.required]
+   
+    
   }, {
     validators: passwordMatchValidator
   })
@@ -43,6 +48,15 @@ export class RegisterComponent {
 
   get confirmPassword() {
     return this.registerForm.controls['confirmPassword'];
+  }
+  get gender() {
+    return this.registerForm.controls['gender'];
+  }
+  get mobile() {
+    return this.registerForm.controls['mobile'];
+  }
+  get birthdate() {
+    return this.registerForm.controls['birthdate'];
   }
 
   submitDetails() {
